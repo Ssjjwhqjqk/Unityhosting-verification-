@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking your browser... | Unity Hosting</title>
+    
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0a0f; 
+            color: #e2e8f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .verification-card {
+            background: rgba(20, 18, 26, 0.85);
+            border: 1px solid rgba(255, 136, 0, 0.2); 
+            border-radius: 16px;
+            padding: 40px 30px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 110, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .panel-logo {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255, 110, 0, 0.4)); 
+        }
+
+        .brand-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .status-message {
+            font-size: 18px;
+            font-weight: 500;
+            color: #f8fafc;
+            margin-bottom: 12px;
+        }
+
+        .sub-text {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .captcha-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80px;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #475569;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="verification-card">
+        
+        <div class="logo-container">
+            <img src="data:image/jpeg;base64,/9w/4AAQSkZJRgABAQEASABIAAD/4gIcSUNDX1BST0ZJTEUAAQEAAAIMbGNtcwIQAABtbnRyUkdCIFhZWiAH3AABABkAAwApADlhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAAAnd3RwdAAAATABAAAAFAYYemNwdAAAAMgAAAAUclhZWgAAANwAAAAUZ1hZWgAAAPEAAAAUYlhZWgAAAcAAAAAUclRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgYlRSQwAAAdgAAAAgZGVzYwAAAAAAAAALc1JHQiBnaGF1cwAAAAAAAAAAAAAAAABzUkdCIGdoYXVzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBKZXN1cyBHYXJjaWEAAGlhbDynamicLogoData" alt="Unity Hosting" class="panel-logo">
+        </div>
+
+        <h1 class="brand-title">Unity Hosting</h1>
+        <p class="status-message">Checking your browser before accessing...</p>
+        <p class="sub-text">This process is automatic. Your connection is being secured against automated threats. Please wait 5–10 seconds...</p>
+
+        <div class="captcha-container">
+            <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-callback="onSuccess"></div>
+        </div>
+
+        <div class="footer-note">
+            <span>Protected securely by Cloudflare Turnstile</span>
+        </div>
+
+    </div>
+
+    <script>
+        // Redirects the user automatically once they clear the verification challenge
+        function onSuccess(token) {
+            // REPLACE THIS URL WITH YOUR ACTUAL PANEL BACKEND LOGIN URL
+            window.location.href = "https://cp.asheocloud.com/dashboard"; 
+        }
+    </script>
+
+</body>
+</html>
